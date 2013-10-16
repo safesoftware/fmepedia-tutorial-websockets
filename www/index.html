@@ -80,11 +80,15 @@
 		var rcvconn = new WebSocket('ws://jabba:7078/websocket');
 		
 		var connmsg = null;
+		
+		/*** connect to server input stream ***/
 		sendconn.onopen = function() {
 			connmsg = '{ ws_op : "open", ws_stream_id : "point_in" }';
 			sendconn.send(connmsg);
 			log_message(connmsg, 'sent_log');
 		}
+		
+		/*** connect to server output stream ***/
 		rcvconn.onopen = function() {
 			connmsg = '{ ws_op : "open", ws_stream_id : "disp_pnts_out" }';
 			rcvconn.send(connmsg);
@@ -104,21 +108,32 @@
 			var point_msg = '{ ws_op : "send", ws_msg : "' + event.latLng + '" }'
 			log_message(point_msg, 'sent_log');
 			sendconn.send(point_msg);
+			
+			var marker = new google.maps.Marker({
+				position: event.latLng,
+				map: map,
+				icon: {
+					path: google.maps.SymbolPath.CIRCLE,
+					fillColor: "green",
+					strokeColor: "green",
+					scale: 8
+				},
+				title:"Original point"
+			});
 		});
 		
 		/*** Reacting to incoming messages on WebSocket ***/
 		rcvconn.onmessage = function(event) {
 			log_message(event.data, 'rcvd_log');
 			var parsed_message = JSON.parse(event.data);
-			console.log(parsed_message['ws_msg'])
 			var coord = JSON.parse(parsed_message['ws_msg']);
-			console.log('coordinate: '+coord['lat']+','+coord['lon']);
 			
 			var myLatlng = new google.maps.LatLng(coord['lat'], coord['lon']);
 			var marker = new google.maps.Marker({
 				position: myLatlng,
 				map: map,
-				title:"Displaced point"
+				title:"Displaced point",
+				animation: google.maps.Animation.DROP
 			});
 		}
 	}
