@@ -113,12 +113,17 @@ body {
 	margin: 2rem 0;
 }
 
-#sent_log  p {
+.log {
+	height: 200px;
+	overflow: auto;
+}
+
+.log p {
 	color: #ccc;
 	transition: color 2s;
 }
 
-#sent_log  p:first-child {
+.log  p:first-child {
 	color: #000;
 	transition: color 2s;
 }
