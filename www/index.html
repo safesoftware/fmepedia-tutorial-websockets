@@ -83,14 +83,14 @@
 		
 		/*** connect to server input stream ***/
 		sendconn.onopen = function() {
-			connmsg = '{ ws_op : "open", ws_stream_id : "point_in" }';
+			connmsg = '{ ws_op : "open", ws_stream_id : "points" }';
 			sendconn.send(connmsg);
 			log_message(connmsg, 'sent_log');
 		}
 		
 		/*** connect to server output stream ***/
 		rcvconn.onopen = function() {
-			connmsg = '{ ws_op : "open", ws_stream_id : "disp_pnts_out" }';
+			connmsg = '{ ws_op : "open", ws_stream_id : "disp_pnts" }';
 			rcvconn.send(connmsg);
 			log_message(connmsg, 'sent_log');
 		}

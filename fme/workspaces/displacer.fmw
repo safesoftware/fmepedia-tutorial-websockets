@@ -34,7 +34,7 @@
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2013-10-16T11:04:13"
+#! LAST_SAVE_DATE="2013-10-18T10:30:28"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
@@ -45,7 +45,7 @@
 #! REQUIREMENTS=""
 #! BEGIN_TCL=""
 #! DOC_EXTENTS="3293 968"
-#! FME_DOCUMENT_GUID="403b6633-152b-4cf6-87c8-fb18c3f66479"
+#! FME_DOCUMENT_GUID="e40a0dab-0c98-4dd9-b0e7-e9bf043b404e"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
@@ -115,7 +115,7 @@
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="PREAMBLE" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_op:&lt;space&gt;&lt;quote&gt;open&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_stream_id:&lt;space&gt;&lt;quote&gt;point_out&lt;quote&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="PREAMBLE" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_op:&lt;space&gt;&lt;quote&gt;open&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_stream_id:&lt;space&gt;&lt;quote&gt;points&lt;quote&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
 #! <XFORM_PARM PARM_NAME="ATTRNAME" PARM_VALUE="message"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WebSocketReceiver"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
@@ -280,7 +280,7 @@
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lat" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="PREAMBLE" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_op:&lt;space&gt;&lt;quote&gt;open&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_stream_id:&lt;space&gt;&lt;quote&gt;disp_pnts_in&lt;quote&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
+#! <XFORM_PARM PARM_NAME="PREAMBLE" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_op:&lt;space&gt;&lt;quote&gt;open&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_stream_id:&lt;space&gt;&lt;quote&gt;disp_pnts&lt;quote&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
 #! <XFORM_PARM PARM_NAME="DATA" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_op:&lt;space&gt;&lt;apos&gt;send&lt;apos&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_msg:&lt;space&gt;&lt;apos&gt;&lt;opencurly&gt;&lt;quote&gt;lat&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;lat&lt;closeparen&gt;&lt;quote&gt;&lt;comma&gt;&lt;space&gt;&lt;quote&gt;lon&lt;quote&gt;:&lt;space&gt;&lt;quote&gt;&lt;at&gt;Value&lt;openparen&gt;lon&lt;closeparen&gt;&lt;quote&gt;&lt;space&gt;&lt;closecurly&gt;&lt;apos&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WebSocketSender"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
@@ -488,7 +488,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME Creator_Cloner    INPUT FEATURE_TYPE __
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketReceiver       INPUT  FEATURE_TYPE Creator_CREATED    DIRECTION RECEIVE    INITIATION_SEQUENCE CONNECT    PERSISTENT NO    HOST "@EvaluateExpression(STRING,ws://jabba:7078/websocket,WebSocketReceiver)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><space><space><space><space>ws_op:<space><quote>open<quote><comma><lf><space><space><space><space>ws_stream_id:<space><quote>point_out<quote><lf><closecurly>,WebSocketReceiver)"    ATTRNAME "message"    OUTPUT OUTPUT FEATURE_TYPE WebSocketReceiver_OUTPUT
+FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketReceiver       INPUT  FEATURE_TYPE Creator_CREATED    DIRECTION RECEIVE    INITIATION_SEQUENCE CONNECT    PERSISTENT NO    HOST "@EvaluateExpression(STRING,ws://jabba:7078/websocket,WebSocketReceiver)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><space><space><space><space>ws_op:<space><quote>open<quote><comma><lf><space><space><space><space>ws_stream_id:<space><quote>points<quote><lf><closecurly>,WebSocketReceiver)"    ATTRNAME "message"    OUTPUT OUTPUT FEATURE_TYPE WebSocketReceiver_OUTPUT
 
 # -------------------------------------------------------------------------
 
@@ -506,7 +506,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME SubstringExtractor    INPUT  FEATURE_TY
 
 # -------------------------------------------------------------------------
 
-Tcl2 set AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitDelim]] }      {         set AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitDelim;            set delim [set AttributeSplitter_b5ffecce_c2fd_4fcb_8b51_4b6bd7defaac23_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+Tcl2 set AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitDelim]] }      {         set AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitDelim;            set delim [set AttributeSplitter_66be4420_4e17_4cad_b9d3_3663b9cf164b0_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeSplitter    INPUT  FEATURE_TYPE SubstringExtractor_OUTPUT    OUTPUT FEATURE_TYPE AttributeSplitter_OUTPUT         @Tcl2(AttributeSplitter_doSplit)
 
 # -------------------------------------------------------------------------
@@ -524,7 +524,7 @@ FACTORY_DEF * TestFactory    FACTORY_NAME CoordinateExtractor    INPUT  FEATURE_
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketSender       INPUT  FEATURE_TYPE CoordinateExtractor_OUTPUT    DIRECTION SEND    INITIATION_SEQUENCE CONNECT    HOST "@EvaluateExpression(STRING,ws://jabba:7078/websocket,WebSocketSender)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><space><space><space><space>ws_op:<space><quote>open<quote><comma><lf><space><space><space><space>ws_stream_id:<space><quote>disp_pnts_in<quote><lf><closecurly>,WebSocketSender)"    DATA "@EvaluateExpression(STRING,@EvaluateExpression(STRING_ENCODED,<opencurly><lf><space><space><space><space>ws_op:<space><apos>send<apos><comma><lf><space><space><space><space>ws_msg:<space><apos><opencurly><quote>lat<quote>:<space><quote><at>Value<openparen>lat<closeparen><quote><comma><space><quote>lon<quote>:<space><quote><at>Value<openparen>lon<closeparen><quote><space><closecurly><apos><lf><closecurly>,WebSocketSender),WebSocketSender)"    OUTPUT OUTPUT FEATURE_TYPE WebSocketSender_OUTPUT
+FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketSender       INPUT  FEATURE_TYPE CoordinateExtractor_OUTPUT    DIRECTION SEND    INITIATION_SEQUENCE CONNECT    HOST "@EvaluateExpression(STRING,ws://jabba:7078/websocket,WebSocketSender)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><space><space><space><space>ws_op:<space><quote>open<quote><comma><lf><space><space><space><space>ws_stream_id:<space><quote>disp_pnts<quote><lf><closecurly>,WebSocketSender)"    DATA "@EvaluateExpression(STRING,@EvaluateExpression(STRING_ENCODED,<opencurly><lf><space><space><space><space>ws_op:<space><apos>send<apos><comma><lf><space><space><space><space>ws_msg:<space><apos><opencurly><quote>lat<quote>:<space><quote><at>Value<openparen>lat<closeparen><quote><comma><space><quote>lon<quote>:<space><quote><at>Value<openparen>lon<closeparen><quote><space><closecurly><apos><lf><closecurly>,WebSocketSender),WebSocketSender)"    OUTPUT OUTPUT FEATURE_TYPE WebSocketSender_OUTPUT
 
 # -------------------------------------------------------------------------
 
