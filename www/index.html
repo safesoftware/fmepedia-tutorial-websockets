@@ -109,6 +109,7 @@
 			log_message(point_msg, 'sent_log');
 			sendconn.send(point_msg);
 			
+			// place a marker to show where user clicked
 			var marker = new google.maps.Marker({
 				position: event.latLng,
 				map: map,
