@@ -5,8 +5,9 @@
 #    Command-line to run this workspace:
 #    
 #    
-#    C:\apps\FME_14181\fme.exe C:\safegit\fmepedia-tutorial-websockets\fme\workspaces\displacer.fmw
+#    C:\apps\FME_14181\fme.exe C:\safegit\fmepedia-tutorial-websockets\fme\workspaces\displacer_modified.fmw
 #          --server_url ws://jabba:7078/websocket
+#          --SourceDataset_TEXTLINE C:\safegit\fmepedia-tutorial-websockets\fme\data\sample-json.json
 #    
 #    
 #! PASSWORD=""
@@ -21,7 +22,7 @@
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
 #! FME_BUILD_NUM="14181"
-#! ZOOM_SCALE="120"
+#! ZOOM_SCALE="80"
 #! CATEGORY=""
 #! REDIRECT_TERMINATORS="NONE"
 #! LEGAL_TERMS_CONDITIONS=""
@@ -29,13 +30,13 @@
 #! USAGE=""
 #! END_PYTHON=""
 #! HISTORY=""
-#! FME_DOCUMENT_PRIORGUID="7bfd6552-4d33-46ae-825c-0d35f951ca3d,0106a703-a099-4001-8b48-cfe664312434,99311605-19d4-47a5-bf6d-608be7b948b3"
-#! DOC_TOP_LEFT="-3369 -41"
+#! FME_DOCUMENT_PRIORGUID="7bfd6552-4d33-46ae-825c-0d35f951ca3d,0106a703-a099-4001-8b48-cfe664312434,5bdf18c7-9a67-49c6-a560-e8d4bd98ea0f,29ac2813-bf92-4615-af1c-9fb08ef0fa69"
+#! DOC_TOP_LEFT="-2771 71"
 #! REQUIREMENTS_KEYWORD=""
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2013-10-24T15:51:24"
+#! LAST_SAVE_DATE="2013-10-24T15:16:13"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
@@ -45,26 +46,275 @@
 #! LOG_FILE=""
 #! REQUIREMENTS=""
 #! BEGIN_TCL=""
-#! DOC_EXTENTS="4506 1760"
-#! FME_DOCUMENT_GUID="f2c39c80-30af-48e7-a6f2-83572148351c"
+#! DOC_EXTENTS="2375 1355"
+#! FME_DOCUMENT_GUID="04a80d54-649d-4b22-9512-6d6a10d246cb"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
 #! >
 #! <DATASETS>
+#! <DATASET
+#! IS_SOURCE="true"
+#! ROLE="READER"
+#! FORMAT="TEXTLINE"
+#! DATASET="$(SourceDataset_TEXTLINE)"
+#! KEYWORD="TEXTLINE_1"
+#! MULTI_GEOM_ALLOWED="false"
+#! ATTR_MAX_LENGTH="60"
+#! ATTR_CASE="ANY"
+#! ALLOWED_FEAT_TYPES=""
+#! WRITE_DEFS="false"
+#! DEFLINE_TEMPLATE=""
+#! DEFLINE_ATTRS="false"
+#! EXPOSABLE_ATTRS="fme_text_size number(31,15) fme_rotation number(31,15) fme_feature_type char(50) multi_reader_keyword char(50) multi_reader_id number(11,0) fme_dataset char(50) multi_reader_full_id number(11,0) fme_geometry fme_char(50) multi_reader_type char(50) fme_fill_color char(50) fme_basename char(50) text_line_type char(64) fme_text_string char(50) fme_secondary_axis number(31,15) fme_primary_axis number(31,15) fme_sweep_angle number(31,15) fme_start_angle number(31,15) text_line_number number(11,0) fme_type char(50) text_line_eol char(10) fme_color char(50) text_line_length number(6,0)"
+#! DEFLINE_PARMS=""
+#! ATTR_INDEX_TYPES=""
+#! ATTR_NAME_INVALID_CHARS=""
+#! SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#! ENABLED="true"
+#! DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#! GENERATE_FME_BUILD_NUM="14181"
+#! MAX_FEATURES=""
+#! COORDSYS=""
+#! MIN_FEATURES=""
+#! FEATURE_TYPES=""
+#! START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#! NAME="MIME_TYPE"
+#! VALUE=""
+#! />
+#! </DATASET>
 #! </DATASETS>
 #! <DATA_TYPES>
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="char(width)"
+#! FME_TYPE="fme_varchar(width)"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="char(width)"
+#! FME_TYPE="fme_char(width)"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="buffer"
+#! FME_TYPE="fme_buffer"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="char(20)"
+#! FME_TYPE="fme_datetime"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="char(12)"
+#! FME_TYPE="fme_time"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="char(8)"
+#! FME_TYPE="fme_date"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="char(1)"
+#! FME_TYPE="fme_char(width)"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(31,15)"
+#! FME_TYPE="fme_real64"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(15,7)"
+#! FME_TYPE="fme_real32"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(11,0)"
+#! FME_TYPE="fme_int32"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(11,0)"
+#! FME_TYPE="fme_uint32"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(20,0)"
+#! FME_TYPE="fme_int64"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(20,0)"
+#! FME_TYPE="fme_uint64"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="logical"
+#! FME_TYPE="fme_boolean"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(6,0)"
+#! FME_TYPE="fme_int16"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(6,0)"
+#! FME_TYPE="fme_uint16"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(4,0)"
+#! FME_TYPE="fme_uint8"
+#! FORMAT="TEXTLINE"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="number(width,decimal)"
+#! FME_TYPE="fme_decimal(width,decimal)"
+#! FORMAT="TEXTLINE"
+#! />
 #! </DATA_TYPES>
 #! <GEOM_TYPES>
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_no_geom"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_point"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_line"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_area"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_text"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_ellipse"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_arc"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_rectangle"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_rounded_rectangle"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_collection"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_raster"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_surface"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_solid"
+#! FORMAT="TEXTLINE"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="true"
+#! FORMAT_TYPE="text_line_none"
+#! FME_TYPE="fme_point_cloud"
+#! FORMAT="TEXTLINE"
+#! />
 #! </GEOM_TYPES>
 #! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#! IS_SOURCE="true"
+#! NODE_NAME="text_line"
+#! IS_EDITABLE="false"
+#! IDENTIFIER="25"
+#! FEAT_GEOMTYPE="text_line_none"
+#! POSITION="-2592 617"
+#! ORDER="5e+014"
+#! COLLAPSED="true"
+#! KEYWORD="TEXTLINE_1"
+#! ENABLED="true"
+#! HIDDEN_USER_ATTRS=""
+#! MERGE="false"
+#! MERGE_FILTER=""
+#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#! MERGE_FILTER_CASE_SENSITIVE="true"
+#! DYNAMIC_SCHEMA="false"
+#! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="text_line_data" ATTR_TYPE="buffer" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
 #! </FEATURE_TYPES>
 #! <FMESERVER>
 #! <SERVICES>
 #! <SERVICE
-#! NAME="fmejobsubmitter"
+#! NAME="fmenotification"
 #! >
 #! <PROPERTIES>
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="CONTENT_FORMAT"
+#! VALUE="JSON"
+#! />
 #! <PROPERTY
 #! CATEGORY="FMEUSERPROPDATA"
 #! NAME="FAILURE_TOPICS"
@@ -73,7 +323,7 @@
 #! <PROPERTY
 #! CATEGORY="FMEUSERPROPDATA"
 #! NAME="HTTP_DATASET"
-#! VALUE=""
+#! VALUE="TEXTLINE_1"
 #! />
 #! <PROPERTY
 #! CATEGORY="FMEUSERPROPDATA"
@@ -87,8 +337,18 @@
 #! />
 #! <PROPERTY
 #! CATEGORY="FMEUSERPROPDATA"
+#! NAME="SUBSCRIBER"
+#! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
 #! NAME="SUCCESS_TOPICS"
 #! VALUE=""
+#! />
+#! <PROPERTY
+#! CATEGORY="FMEUSERPROPDATA"
+#! NAME="TOPICS_LIST"
+#! VALUE="points"
 #! />
 #! </PROPERTIES>
 #! </SERVICE>
@@ -100,17 +360,22 @@
 #! DEFAULT_VALUE="ws://jabba:7078/websocket"
 #! IS_STAND_ALONE="true"
 #! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI MULTIFILE SourceDataset_TEXTLINE Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|All_files(*.*)|*.* Source Text File(s):"
+#! DEFAULT_VALUE="C:\safegit\fmepedia-tutorial-websockets\fme\data\sample-json.json"
+#! IS_STAND_ALONE="false"
+#! />
 #! </GLOBAL_PARAMETERS>
 #! <COMMENTS>
 #! <COMMENT
 #! IDENTIFIER="26"
-#! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;displacer.fmw&lt;br&gt;Safe Software&lt;br&gt;Last modifiec: 2013-10-18&lt;br&gt;&lt;br&gt;Reads from FME WebSocket Server, extracts coordinates,&lt;br&gt;displaces point, and writes back to WebSocket.&lt;br&gt;&lt;br&gt;This is an example of the Message Streaming mode of&lt;br&gt;WebSocket communication. No setup is required on FME&lt;br&gt;Server.&lt;br&gt;&lt;br&gt;NOTE: this workspace runs continually once started, and &lt;br&gt;must be stopped manually.&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="-3369 1719"
+#! COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Arial Narrow&apos;; font-size:13px; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:13px;&quot;&gt;displacer_modified.fmw&lt;br /&gt;Safe Software&lt;br /&gt;Last modifiec: 2013-10-24&lt;br /&gt;&lt;br /&gt;Processes notification from FME Server, displaces point, and returns result directly to the WebSocket server.&lt;br /&gt;&lt;br /&gt;This is an example of the hybrid mode of WebSocket communication. This workspace will need to be configured as a subscription to the &apos;points&apos; topic on FME Server.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#! POSITION="-2727 1426"
 #! ORDER="33"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
-#! TOP_LEFT="-3370 1719"
-#! BOTTOM_RIGHT="-3370 1719"
+#! TOP_LEFT="-2727 825"
+#! BOTTOM_RIGHT="-2008 224"
 #! COLOUR="1,1,0.784314"
 #! SIZE_POLICY="10"
 #! COMMENT_TYPE="REGULAR"
@@ -119,28 +384,15 @@
 #! <COMMENT
 #! IDENTIFIER="24"
 #! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;WebSocketSender [WebSocketSender:0]&lt;br&gt;WebSocket Server URL: $(server_url)&lt;br&gt;Connection Preamble: {&lt;br&gt;    ws_op: &amp;quot;open&amp;quot;,&lt;br&gt;    ws_stream_id: &amp;quot;disp_pnts&amp;quot;&lt;br&gt;}&lt;br&gt;Data to Transmit: {&lt;br&gt;    ws_op: &apos;send&apos;,&lt;br&gt;    ws_msg: &apos;{&amp;quot;lat&amp;quot;: &amp;quot;@Value(lat)&amp;quot;, &amp;quot;lon&amp;quot;: &amp;quot;@Value(lon)&amp;quot; }&apos;&lt;br&gt;}&lt;br&gt;Version: 0&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="273 723"
+#! POSITION="-1260 835"
 #! ORDER="31"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="true"
-#! TOP_LEFT="272 723"
-#! BOTTOM_RIGHT="272 723"
+#! TOP_LEFT="-1261 835"
+#! BOTTOM_RIGHT="-1261 835"
 #! COLOUR="0.666667,0.901961,1"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="14"
-#! />
-#! <COMMENT
-#! IDENTIFIER="25"
-#! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;WebSocketReceiver [WebSocketReceiver:0]&lt;br&gt;WebSocket Server URL $(server_url)&lt;br&gt;Connection Preamble: {&lt;br&gt;    ws_op: &amp;quot;open&amp;quot;,&lt;br&gt;    ws_stream_id: &amp;quot;points&amp;quot;&lt;br&gt;}&lt;br&gt;Output Attribute: message&lt;br&gt;Version: 0&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="-1345 759"
-#! ORDER="32"
-#! FOLLOW_ANCHOR="true"
-#! INFO_NODE="true"
-#! TOP_LEFT="-1346 759"
-#! BOTTOM_RIGHT="-1346 759"
-#! COLOUR="0.666667,0.901961,1"
-#! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="1"
 #! />
 #! </COMMENTS>
 #! <CONSTANTS>
@@ -148,95 +400,72 @@
 #! <BOOKMARKS>
 #! <BOOKMARK
 #! IDENTIFIER="21"
-#! NAME="Read from WebSocket and process to attributes"
+#! NAME="Read from notification and process to attributes"
 #! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
-#! TOP_LEFT="-1422 874"
-#! BOTTOM_RIGHT="-626 -169"
+#! TOP_LEFT="-2771 757"
+#! BOTTOM_RIGHT="-1975 -88"
 #! STICKY="true"
 #! COLOUR="0.164706,0.584314,0.921569"
-#! CONTENTS="9 8 6 29 1 25 "
+#! CONTENTS="6 9 27 4 7 8 25 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="22"
-#! NAME="Displace point northeast, and extract coords"
+#! NAME="Displace point, and extract coords"
 #! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
-#! TOP_LEFT="-592 605"
-#! BOTTOM_RIGHT="158 -35"
+#! TOP_LEFT="-1945 547"
+#! BOTTOM_RIGHT="-1361 -60"
 #! STICKY="true"
 #! COLOUR="0.0156863,0.321569,0.392157"
-#! CONTENTS="17 16 10 13 12 "
+#! CONTENTS="13 12 17 10 16 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="23"
 #! NAME="Send to WebSocket server and log"
 #! DESCRIPTION="&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;"
-#! TOP_LEFT="207 855"
-#! BOTTOM_RIGHT="1137 -204"
+#! TOP_LEFT="-1326 967"
+#! BOTTOM_RIGHT="-396 -92"
 #! STICKY="true"
 #! COLOUR="0.784314,0.258824,0.0627451"
-#! CONTENTS="24 20 14 19 "
+#! CONTENTS="24 19 14 20 "
 #! />
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
 #! <TRANSFORMER
-#! IDENTIFIER="1"
-#! TYPE="WebSocketReceiver"
-#! VERSION="0"
-#! POSITION="-1267 296"
-#! ORDER="6"
+#! IDENTIFIER="4"
+#! TYPE="JSONExtractor"
+#! VERSION="1"
+#! POSITION="-2605 401"
+#! ORDER="11"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <OUTPUT_FEAT NAME="EVALUATED"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="PREAMBLE" PARM_VALUE="&lt;opencurly&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_op:&lt;space&gt;&lt;quote&gt;open&lt;quote&gt;&lt;comma&gt;&lt;lf&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;&lt;space&gt;ws_stream_id:&lt;space&gt;&lt;quote&gt;points&lt;quote&gt;&lt;lf&gt;&lt;closecurly&gt;"/>
-#! <XFORM_PARM PARM_NAME="ATTRNAME" PARM_VALUE="message"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="WebSocketReceiver"/>
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="HOST" PARM_VALUE="$(server_url)"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="2"
-#! TYPE="Creator"
-#! VERSION="5"
-#! POSITION="-1924 716"
-#! ORDER="7"
-#! PARMS_EDITED="false"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="CREATED"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_PARM PARM_NAME="CRE_ATTR" PARM_VALUE="_creation_instance"/>
-#! <XFORM_PARM PARM_NAME="GEOM" PARM_VALUE="&lt;lt&gt;?xml&lt;space&gt;version=&lt;quote&gt;1.0&lt;quote&gt;&lt;space&gt;encoding=&lt;quote&gt;US_ASCII&lt;quote&gt;&lt;space&gt;standalone=&lt;quote&gt;no&lt;quote&gt;&lt;space&gt;?&lt;gt&gt;&lt;lt&gt;geometry&lt;space&gt;dimension=&lt;quote&gt;2&lt;quote&gt;&lt;gt&gt;&lt;lt&gt;null&lt;solidus&gt;&lt;gt&gt;&lt;lt&gt;&lt;solidus&gt;geometry&lt;gt&gt;"/>
-#! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="NUM" PARM_VALUE="1"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Creator"/>
-#! <XFORM_PARM PARM_NAME="COORDS" PARM_VALUE="&lt;Unused&gt;"/>
-#! <XFORM_PARM PARM_NAME="ATEND" PARM_VALUE="no"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="GEOMTYPE" PARM_VALUE="Geometry Object"/>
+#! <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="ws_msg json&lt;openbracket&gt;&lt;quote&gt;ws_msg&lt;quote&gt;&lt;closebracket&gt;"/>
+#! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="text_line_data"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="6"
 #! TYPE="SubstringExtractor"
 #! VERSION="0"
-#! POSITION="-1270 154"
+#! POSITION="-2608 242"
 #! ORDER="14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="RESULT_ATTR" PARM_VALUE="_substring"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="message"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="ws_msg"/>
 #! <XFORM_PARM PARM_NAME="START" PARM_VALUE="1"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SubstringExtractor"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
@@ -247,15 +476,15 @@
 #! IDENTIFIER="8"
 #! TYPE="AttributeSplitter"
 #! VERSION="2"
-#! POSITION="-1256 15"
+#! POSITION="-2586 81"
 #! ORDER="16"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="latlon"/>
@@ -271,15 +500,15 @@
 #! IDENTIFIER="10"
 #! TYPE="2DPointReplacer"
 #! VERSION="1"
-#! POSITION="-452 482"
+#! POSITION="-1880 443"
 #! ORDER="21"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="POINT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="XVALATTR" PARM_VALUE="@Value(latlon{1})"/>
@@ -292,15 +521,15 @@
 #! IDENTIFIER="12"
 #! TYPE="Offsetter"
 #! VERSION="0"
-#! POSITION="-457 320"
+#! POSITION="-1885 281"
 #! ORDER="23"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OFFSET"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="YOFF" PARM_VALUE="0.05"/>
@@ -316,15 +545,15 @@
 #! IDENTIFIER="14"
 #! TYPE="WebSocketSender"
 #! VERSION="0"
-#! POSITION="442 127"
+#! POSITION="-1091 239"
 #! ORDER="24"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
@@ -341,15 +570,15 @@
 #! IDENTIFIER="16"
 #! TYPE="CoordinateExtractor"
 #! VERSION="1"
-#! POSITION="-432 158"
+#! POSITION="-1860 119"
 #! ORDER="25"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
@@ -368,15 +597,15 @@
 #! IDENTIFIER="19"
 #! TYPE="Logger"
 #! VERSION="3"
-#! POSITION="451 -41"
+#! POSITION="-1082 71"
 #! ORDER="26"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="LOGGED"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="_creation_instance" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="message" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
@@ -393,9 +622,9 @@
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
 #! <FEAT_LINK
-#! IDENTIFIER="3"
-#! SOURCE_NODE="2"
-#! TARGET_NODE="1"
+#! IDENTIFIER="7"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="6"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -456,10 +685,10 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="29"
-#! SOURCE_NODE="1"
-#! TARGET_NODE="6"
-#! SOURCE_PORT_DESC="fo 0"
+#! IDENTIFIER="27"
+#! SOURCE_NODE="25"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="-1"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
@@ -475,21 +704,71 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 #! 
+GUI IGNORE SourceDataset_TEXTLINE_1,TEXTLINE_IN_READ_WHOLE_FILE_AT_ONCE_TEXTLINE_1,TEXTLINE_IN_READ_BOTTOM_UP_TEXTLINE_1,TEXTLINE_IN_SKIP_LINES_TEXTLINE_1,TEXTLINE_IN_SKIP_FOOTER_TEXTLINE_1,TEXTLINE_IN_ENCODING_TEXTLINE_1,TEXTLINE_IN_NETWORK_AUTHENTICATION_TEXTLINE_1,TEXTLINE_IN_NETWORK_PROXY_TEXTLINE_1
 DEFAULT_MACRO server_url ws://jabba:7078/websocket
 GUI TEXT server_url WebSocket Server URL:
+DEFAULT_MACRO SourceDataset_TEXTLINE C:\safegit\fmepedia-tutorial-websockets\fme\data\sample-json.json
+GUI MULTIFILE SourceDataset_TEXTLINE Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|All_files(*.*)|*.* Source Text File(s):
 INCLUDE [ if {{$(server_url)} == {}} { puts_real {Parameter 'server_url' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(SourceDataset_TEXTLINE)} == {}} { puts_real {Parameter 'SourceDataset_TEXTLINE' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
-READER_TYPE NULL
-READER_KEYWORD NULL_SOURCE
-NULL_SOURCE_DATASET null
+READER_TYPE TEXTLINE
+READER_KEYWORD TEXTLINE_1
+READER_GEN_DIRECTIVES SKIP_LINES,0,READ_BOTTOM_UP,No,SKIP_FOOTER,0,_MERGE_SCHEMAS,YES,READ_WHOLE_FILE_AT_ONCE,NO,ENCODING,
 WRITER_TYPE NULL
 WRITER_KEYWORD NULL_DEST
 NULL_DEST_DATASET null
 #! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "TEXTLINE_1"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER TEXTLINE TEXTLINE_1
+# =====================================================================
+# The following GUI line prompts for a file to be used as the source
+# TextLine file. The user input is stored in a macro, which is then
+# used to define the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_TEXTLINE_1 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER TEXTLINE TEXTLINE_1
+DEFAULT_MACRO SourceDataset_TEXTLINE_1 $(SourceDataset_TEXTLINE)
+GUI MULTIFILE SourceDataset_TEXTLINE_1 Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|All_files(*.*)|*.* Source Text File(s):
+DEFAULT_MACRO TEXTLINE_IN_READ_WHOLE_FILE_AT_ONCE_TEXTLINE_1 YES
+TEXTLINE_1_READ_WHOLE_FILE_AT_ONCE "$(TEXTLINE_IN_READ_WHOLE_FILE_AT_ONCE_TEXTLINE_1)"
+GUI ACTIVECHOICE TEXTLINE_IN_READ_WHOLE_FILE_AT_ONCE_TEXTLINE_1 YES,TEXTLINE_IN_READ_BOTTOM_UP,TEXTLINE_IN_SKIP_LINES,TEXTLINE_IN_SKIP_FOOTER%NO Read Whole File at Once:
+DEFAULT_MACRO TEXTLINE_IN_READ_BOTTOM_UP_TEXTLINE_1 No
+TEXTLINE_1_READ_BOTTOM_UP "$(TEXTLINE_IN_READ_BOTTOM_UP_TEXTLINE_1)"
+GUI CHOICE TEXTLINE_IN_READ_BOTTOM_UP_TEXTLINE_1 Yes%No Read Bottom Up:
+DEFAULT_MACRO TEXTLINE_IN_SKIP_LINES_TEXTLINE_1 0
+TEXTLINE_1_SKIP_LINES "$(TEXTLINE_IN_SKIP_LINES_TEXTLINE_1)"
+GUI OPTIONAL INTEGER TEXTLINE_IN_SKIP_LINES_TEXTLINE_1 Number of Lines to Skip:
+DEFAULT_MACRO TEXTLINE_IN_SKIP_FOOTER_TEXTLINE_1 0
+TEXTLINE_1_SKIP_FOOTER "$(TEXTLINE_IN_SKIP_FOOTER_TEXTLINE_1)"
+GUI OPTIONAL INTEGER TEXTLINE_IN_SKIP_FOOTER_TEXTLINE_1 Number of Footer Lines to Skip:
+# =====================================================================
+# Allows to force the encoding of source text file
+DEFAULT_MACRO TEXTLINE_IN_ENCODING_TEXTLINE_1 
+TEXTLINE_1_ENCODING "$(TEXTLINE_IN_ENCODING_TEXTLINE_1)"
+GUI OPTIONAL STRING_OR_ENCODING TEXTLINE_IN_ENCODING_TEXTLINE_1 UTF-8%UTF-16LE%UTF-16BE%SYSTEM%BIG5%SJIS%CP037%CP437%CP708%CP720%CP737%CP775%CP850%CP852%CP855%CP857%CP860%CP861%CP862%CP863%CP864%CP865%CP866%CP869%CP932%CP936%CP950%CP1250%CP1251%CP1252%CP1253%CP1254%CP1255%CP1256%CP1257%CP1258%ISO8859-1%ISO8859-2%ISO8859-3%ISO8859-4%ISO8859-5%ISO8859-6%ISO8859-7%ISO8859-8%ISO8859-9%ISO8859-13%ISO8859-15 Character Encoding:
+# ===========================================================================
+DEFAULT_MACRO TEXTLINE_IN_NETWORK_AUTHENTICATION_TEXTLINE_1 
+TEXTLINE_1_NETWORK_AUTHENTICATION "$(TEXTLINE_IN_NETWORK_AUTHENTICATION_TEXTLINE_1)"
+GUI OPTIONAL AUTHENTICATOR TEXTLINE_IN_NETWORK_AUTHENTICATION_TEXTLINE_1 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ===========================================================================
+DEFAULT_MACRO TEXTLINE_IN_NETWORK_PROXY_TEXTLINE_1 
+TEXTLINE_1_NETWORK_PROXY "$(TEXTLINE_IN_NETWORK_PROXY_TEXTLINE_1)"
+GUI OPTIONAL AUTHENTICATOR TEXTLINE_IN_NETWORK_PROXY_TEXTLINE_1 CONTAINER%GROUP%CONTAINER_TITLE%"Network Proxy"%PROMPT_TYPE%PROXY Network Proxy
+TEXTLINE_1_DATASET "$(SourceDataset_TEXTLINE_1)"
+#! END_SOURCE_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)displacer.log"
+LOG_FILENAME "$(FME_MF_DIR)displacer_modified.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -498,13 +777,18 @@ FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
 FME_GEOMETRY_HANDLING Enhanced
 FME_STROKE_MAX_DEVIATION 0
 LOG_FILTER_MASK -1
+DEFAULT_MACRO DATASET_KEYWORD_TEXTLINE_1 TEXTLINE_1
+# -------------------------------------------------------------------------
+
+TEXTLINE_1_READER_META_ATTRIBUTES fme_feature_type
+
 # -------------------------------------------------------------------------
 
 MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME displacer
+MACRO WORKSPACE_NAME displacer_modified
 MACRO FME_VIEWER_APP fmedatainspector
 # -------------------------------------------------------------------------
 
@@ -512,25 +796,20 @@ INCLUDE [ if {[info exists env(FME_TEMP)] && [file isdirectory $env(FME_TEMP)]} 
 MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/inspector.ffs
 MACRO VISUALIZER_SCHEMA_FILE $(WORKSPACE_TEMP_DIR)/inspector.fsc
 MACRO VISUALIZER_CREATE_SPATIAL_INDEX YES
+
+# -------------------------------------------------------------------------
+
+Lookup ___KnownFeatureTypes___   text_line yes   "" no
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@FeatureType()) == yes   OUTPUT PASSED FEATURE_TYPE *
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TYPE *    OUTPUT FEATURE_TYPE *       @Transform(TEXTLINE,FME_GENERIC,PRESERVE_GEOMETRY)
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 # -------------------------------------------------------------------------
 
-Tcl2 proc Creator_CoordSysRemover {} {   global FME_CoordSys;   set FME_CoordSys {}; }
-MACRO Creator_XML     NOT_ACTIVATED
-MACRO Creator_CLASSIC NOT_ACTIVATED
-MACRO Creator_2D3D    2D_GEOMETRY
-MACRO Creator_COORDS  <Unused>
-INCLUDE [ if { {Geometry Object} == {Geometry Object} } {            puts {MACRO Creator_XML *} } ]
-INCLUDE [ if { {Geometry Object} == {2D Coordinate List} } {            puts {MACRO Creator_2D3D 2D_GEOMETRY};            puts {MACRO Creator_CLASSIC *} } ]
-INCLUDE [ if { {Geometry Object} == {3D Coordinate List} } {            puts {MACRO Creator_2D3D 3D_GEOMETRY};            puts {MACRO Creator_CLASSIC *} } ]
-INCLUDE [ if { {Geometry Object} == {2D Min/Max Box} } {            set comment {                We need to turn the COORDS which are                    minX minY maxX maxY                into a full polygon list of coordinates            };            set splitCoords [split [string trim {<Unused>}]];            if { [llength $splitCoords] > 4} {               set trimmedCoords {};               foreach item $splitCoords { if { $item != {} } {lappend trimmedCoords $item} };               set splitCoords $trimmedCoords;            };            if { [llength $splitCoords] != 4 } {                error {Creator: Coordinate List MUST have four numbers - `<Unused>' is invalid};            };            set minX [lindex $splitCoords 0];            set minY [lindex $splitCoords 1];            set maxX [lindex $splitCoords 2];            set maxY [lindex $splitCoords 3];            puts "MACRO Creator_COORDS $minX $minY $minX $maxY $maxX $maxY $maxX $minY $minX $minY";            puts {MACRO Creator_2D3D 2D_GEOMETRY};            puts {MACRO Creator_CLASSIC *} } ]
-FACTORY_DEF $(Creator_XML) CreationFactory    FACTORY_NAME Creator_XML_Creator    CREATE_AT_END no    OUTPUT FEATURE_TYPE _____CREATED______        @Geometry(FROM_ENCODED_STRING,<lt>?xml<space>version=<quote>1.0<quote><space>encoding=<quote>US_ASCII<quote><space>standalone=<quote>no<quote><space>?<gt><lt>geometry<space>dimension=<quote>2<quote><gt><lt>null<solidus><gt><lt><solidus>geometry<gt>)
-FACTORY_DEF $(Creator_CLASSIC) CreationFactory    FACTORY_NAME Creator_CLASSIC_Creator    $(Creator_2D3D) $(Creator_COORDS)    CREATE_AT_END no    OUTPUT FEATURE_TYPE _____CREATED______
-FACTORY_DEF * TeeFactory    FACTORY_NAME Creator_Cloner    INPUT FEATURE_TYPE _____CREATED______    NUMBER_OF_COPIES 1    COPY_NUMBER_ATTRIBUTE "_creation_instance"    OUTPUT FEATURE_TYPE Creator_CREATED        @Tcl2(Creator_CoordSysRemover)        @CoordSys()        fme_feature_type Creator
-
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketReceiver       INPUT  FEATURE_TYPE Creator_CREATED    DIRECTION RECEIVE    INITIATION_SEQUENCE CONNECT    PERSISTENT NO    HOST "@EvaluateExpression(STRING,@EvaluateExpression(STRING,$(server_url$encode),WebSocketReceiver),WebSocketReceiver)"    PREAMBLE "@EvaluateExpression(STRING,<opencurly><lf><space><space><space><space>ws_op:<space><quote>open<quote><comma><lf><space><space><space><space>ws_stream_id:<space><quote>points<quote><lf><closecurly>,WebSocketReceiver)"    ATTRNAME "message"    OUTPUT OUTPUT FEATURE_TYPE WebSocketReceiver_OUTPUT
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME JSONExtractor    INPUT  FEATURE_TYPE text_line    MODE EXTRACT    JSON_ATTR text_line_data    QUERIES ws_msg json<openbracket><quote>ws_msg<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE JSONExtractor_EVALUATED
 
 # -------------------------------------------------------------------------
 
@@ -539,12 +818,12 @@ FACTORY_DEF * COM.safe.fme.factory.WebSocketFactory    FACTORY_NAME WebSocketRec
 # small bit of fiddling to do
 
 Tcl2 proc SubstringExtractor_fixLastIndex {lastValue} {     if {$lastValue < -1} {         incr lastValue;         return "end$lastValue";     }     elseif {$lastValue == -1} {         return "end";     }     else {         return $lastValue;     } }
-Tcl2 proc SubstringExtractor_extract {startIdx endIdx} {     FME_SetAttribute {"_substring"}         [string range [FME_GetAttribute {"message"}]                       [SubstringExtractor_fixLastIndex $startIdx]                       [SubstringExtractor_fixLastIndex $endIdx]]     }
-FACTORY_DEF * TeeFactory    FACTORY_NAME SubstringExtractor    INPUT  FEATURE_TYPE WebSocketReceiver_OUTPUT    OUTPUT FEATURE_TYPE SubstringExtractor_OUTPUT         @Tcl2("SubstringExtractor_extract 1 -2")
+Tcl2 proc SubstringExtractor_extract {startIdx endIdx} {     FME_SetAttribute {"_substring"}         [string range [FME_GetAttribute {"ws_msg"}]                       [SubstringExtractor_fixLastIndex $startIdx]                       [SubstringExtractor_fixLastIndex $endIdx]]     }
+FACTORY_DEF * TeeFactory    FACTORY_NAME SubstringExtractor    INPUT  FEATURE_TYPE JSONExtractor_EVALUATED    OUTPUT FEATURE_TYPE SubstringExtractor_OUTPUT         @Tcl2("SubstringExtractor_extract 1 -2")
 
 # -------------------------------------------------------------------------
 
-Tcl2 set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim]] }      {         set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim;            set delim [set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+Tcl2 set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim]] }      {         set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim;            set delim [set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeSplitter    INPUT  FEATURE_TYPE SubstringExtractor_OUTPUT    OUTPUT FEATURE_TYPE AttributeSplitter_OUTPUT         @Tcl2(AttributeSplitter_doSplit)
 
 # -------------------------------------------------------------------------

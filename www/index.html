@@ -126,8 +126,7 @@
 		/*** Reacting to incoming messages on WebSocket ***/
 		rcvconn.onmessage = function(event) {
 			log_message(event.data, 'rcvd_log');
-			var parsed_message = JSON.parse(event.data);
-			var coord = JSON.parse(parsed_message['ws_msg']);
+			var coord = JSON.parse(event.data);
 			
 			var myLatlng = new google.maps.LatLng(coord['lat'], coord['lon']);
 			var marker = new google.maps.Marker({
