@@ -5,14 +5,14 @@
 #    Command-line to run this workspace:
 #    
 #    
-#    C:\apps\FME_14181\fme.exe C:\safegit\fmepedia-tutorial-websockets\fme\workspaces\displacer_modified.fmw
-#          --server_url ws://jabba:7078/websocket
+#    C:\apps\FME_14208\fme.exe C:\safegit\fmepedia-tutorial-websockets\fme\workspaces\displacer_modified.fmw
+#          --server_url ws://fmeserver:7078/websocket
 #          --SourceDataset_TEXTLINE C:\safegit\fmepedia-tutorial-websockets\fme\data\sample-json.json
 #    
 #    
 #! PASSWORD=""
 #! ATTR_TYPE_ENCODING="SDF"
-#! VIEW_POSITION="0 0"
+#! VIEW_POSITION="-3476 1721"
 #! SHOW_INFO_NODES="true"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! BEGIN_PYTHON=""
@@ -21,7 +21,7 @@
 #! TITLE=""
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
-#! FME_BUILD_NUM="14181"
+#! FME_BUILD_NUM="14208"
 #! ZOOM_SCALE="80"
 #! CATEGORY=""
 #! REDIRECT_TERMINATORS="NONE"
@@ -30,24 +30,24 @@
 #! USAGE=""
 #! END_PYTHON=""
 #! HISTORY=""
-#! FME_DOCUMENT_PRIORGUID="7bfd6552-4d33-46ae-825c-0d35f951ca3d,0106a703-a099-4001-8b48-cfe664312434,5bdf18c7-9a67-49c6-a560-e8d4bd98ea0f,29ac2813-bf92-4615-af1c-9fb08ef0fa69"
+#! FME_DOCUMENT_PRIORGUID="7bfd6552-4d33-46ae-825c-0d35f951ca3d,0106a703-a099-4001-8b48-cfe664312434,5bdf18c7-9a67-49c6-a560-e8d4bd98ea0f,29ac2813-bf92-4615-af1c-9fb08ef0fa69,04a80d54-649d-4b22-9512-6d6a10d246cb"
 #! DOC_TOP_LEFT="-2771 71"
 #! REQUIREMENTS_KEYWORD=""
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2013-10-24T15:16:13"
+#! LAST_SAVE_DATE="2013-12-03T17:10:40"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
-#! LAST_SAVE_BUILD="FME(R) 2014 (20131022 - Build 14181 - WIN32)"
+#! LAST_SAVE_BUILD="FME(R) 2014 (20131128 - Build 14208 - WIN32)"
 #! FME_SERVER_SERVICES=""
 #! LOG_MAX_RECORDED_FEATURES="200"
 #! LOG_FILE=""
 #! REQUIREMENTS=""
 #! BEGIN_TCL=""
 #! DOC_EXTENTS="2375 1355"
-#! FME_DOCUMENT_GUID="04a80d54-649d-4b22-9512-6d6a10d246cb"
+#! FME_DOCUMENT_GUID="363416dd-1d8f-4987-9ffe-91f136e8254a"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
@@ -357,7 +357,7 @@
 #! <GLOBAL_PARAMETERS>
 #! <GLOBAL_PARAMETER
 #! GUI_LINE="GUI TEXT_OR_ATTR server_url WebSocket Server URL:"
-#! DEFAULT_VALUE="ws://jabba:7078/websocket"
+#! DEFAULT_VALUE="ws://fmeserver:7078/websocket"
 #! IS_STAND_ALONE="true"
 #! />
 #! <GLOBAL_PARAMETER
@@ -374,9 +374,9 @@
 #! ORDER="33"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
-#! TOP_LEFT="-2727 825"
+#! TOP_LEFT="-2727 1426"
 #! BOTTOM_RIGHT="-2008 224"
-#! COLOUR="1,1,0.784314"
+#! COLOUR="1,1,0.784314,0"
 #! SIZE_POLICY="10"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="0"
@@ -388,9 +388,9 @@
 #! ORDER="31"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="true"
-#! TOP_LEFT="-1261 835"
-#! BOTTOM_RIGHT="-1261 835"
-#! COLOUR="0.666667,0.901961,1"
+#! TOP_LEFT="-1260 835"
+#! BOTTOM_RIGHT="-1260 835"
+#! COLOUR="0.666667,0.901961,1,0"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="14"
 #! />
@@ -406,7 +406,7 @@
 #! BOTTOM_RIGHT="-1975 -88"
 #! STICKY="true"
 #! COLOUR="0.164706,0.584314,0.921569"
-#! CONTENTS="6 9 27 4 7 8 25 "
+#! CONTENTS="25 6 4 8 7 9 27 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="22"
@@ -416,7 +416,7 @@
 #! BOTTOM_RIGHT="-1361 -60"
 #! STICKY="true"
 #! COLOUR="0.0156863,0.321569,0.392157"
-#! CONTENTS="13 12 17 10 16 "
+#! CONTENTS="12 10 17 13 16 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="23"
@@ -426,7 +426,7 @@
 #! BOTTOM_RIGHT="-396 -92"
 #! STICKY="true"
 #! COLOUR="0.784314,0.258824,0.0627451"
-#! CONTENTS="24 19 14 20 "
+#! CONTENTS="19 20 24 14 "
 #! />
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
@@ -434,7 +434,7 @@
 #! IDENTIFIER="4"
 #! TYPE="JSONExtractor"
 #! VERSION="1"
-#! POSITION="-2605 401"
+#! POSITION="-2605 404"
 #! ORDER="11"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
@@ -442,12 +442,12 @@
 #! <OUTPUT_FEAT NAME="EVALUATED"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="SOURCE_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="JSONExtractor"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="QUERY_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="ws_msg json&lt;openbracket&gt;&lt;quote&gt;ws_msg&lt;quote&gt;&lt;closebracket&gt;"/>
+#! <XFORM_PARM PARM_NAME="EXTRACT_QUERY_TABLE" PARM_VALUE="content json&lt;openbracket&gt;&lt;quote&gt;ws_publisher_content&lt;quote&gt;&lt;closebracket&gt;"/>
 #! <XFORM_PARM PARM_NAME="JSON_ATTR" PARM_VALUE="text_line_data"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
@@ -462,10 +462,10 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="RESULT_ATTR" PARM_VALUE="_substring"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="ws_msg"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTR" PARM_VALUE="content"/>
 #! <XFORM_PARM PARM_NAME="START" PARM_VALUE="1"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SubstringExtractor"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
@@ -484,7 +484,7 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="latlon"/>
@@ -508,7 +508,7 @@
 #! <OUTPUT_FEAT NAME="POINT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="XVALATTR" PARM_VALUE="@Value(latlon{1})"/>
@@ -529,7 +529,7 @@
 #! <OUTPUT_FEAT NAME="OFFSET"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_PARM PARM_NAME="YOFF" PARM_VALUE="0.05"/>
@@ -553,7 +553,7 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
@@ -578,7 +578,7 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
@@ -605,7 +605,7 @@
 #! <OUTPUT_FEAT NAME="LOGGED"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_line_data" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#! <XFORM_ATTR ATTR_NAME="ws_msg" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#! <XFORM_ATTR ATTR_NAME="content" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="_substring" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="latlon{}" IS_USER_CREATED="false" FEAT_INDEX="0" />
 #! <XFORM_ATTR ATTR_NAME="lon" IS_USER_CREATED="false" FEAT_INDEX="0" />
@@ -705,7 +705,7 @@
 #! </WORKSPACE>
 #! 
 GUI IGNORE SourceDataset_TEXTLINE_1,TEXTLINE_IN_READ_WHOLE_FILE_AT_ONCE_TEXTLINE_1,TEXTLINE_IN_READ_BOTTOM_UP_TEXTLINE_1,TEXTLINE_IN_SKIP_LINES_TEXTLINE_1,TEXTLINE_IN_SKIP_FOOTER_TEXTLINE_1,TEXTLINE_IN_ENCODING_TEXTLINE_1,TEXTLINE_IN_NETWORK_AUTHENTICATION_TEXTLINE_1,TEXTLINE_IN_NETWORK_PROXY_TEXTLINE_1
-DEFAULT_MACRO server_url ws://jabba:7078/websocket
+DEFAULT_MACRO server_url ws://fmeserver:7078/websocket
 GUI TEXT server_url WebSocket Server URL:
 DEFAULT_MACRO SourceDataset_TEXTLINE C:\safegit\fmepedia-tutorial-websockets\fme\data\sample-json.json
 GUI MULTIFILE SourceDataset_TEXTLINE Text/Compressed_Text_Files(*.txt;*.txt.gz)|*.txt;*.txt.gz|Text_Files(*.txt)|*.txt|Compressed_Text_Files(*.txt.gz)|*.txt.gz|All_files(*.*)|*.* Source Text File(s):
@@ -809,7 +809,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TY
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * JSONQueryFactory    FACTORY_NAME JSONExtractor    INPUT  FEATURE_TYPE text_line    MODE EXTRACT    JSON_ATTR text_line_data    QUERIES ws_msg json<openbracket><quote>ws_msg<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE JSONExtractor_EVALUATED
+FACTORY_DEF * JSONQueryFactory    FACTORY_NAME JSONExtractor    INPUT  FEATURE_TYPE text_line    MODE EXTRACT    JSON_ATTR text_line_data    QUERIES content json<openbracket><quote>ws_publisher_content<quote><closebracket>    OUTPUT EVALUATED FEATURE_TYPE JSONExtractor_EVALUATED
 
 # -------------------------------------------------------------------------
 
@@ -818,12 +818,12 @@ FACTORY_DEF * JSONQueryFactory    FACTORY_NAME JSONExtractor    INPUT  FEATURE_T
 # small bit of fiddling to do
 
 Tcl2 proc SubstringExtractor_fixLastIndex {lastValue} {     if {$lastValue < -1} {         incr lastValue;         return "end$lastValue";     }     elseif {$lastValue == -1} {         return "end";     }     else {         return $lastValue;     } }
-Tcl2 proc SubstringExtractor_extract {startIdx endIdx} {     FME_SetAttribute {"_substring"}         [string range [FME_GetAttribute {"ws_msg"}]                       [SubstringExtractor_fixLastIndex $startIdx]                       [SubstringExtractor_fixLastIndex $endIdx]]     }
+Tcl2 proc SubstringExtractor_extract {startIdx endIdx} {     FME_SetAttribute {"_substring"}         [string range [FME_GetAttribute {"content"}]                       [SubstringExtractor_fixLastIndex $startIdx]                       [SubstringExtractor_fixLastIndex $endIdx]]     }
 FACTORY_DEF * TeeFactory    FACTORY_NAME SubstringExtractor    INPUT  FEATURE_TYPE JSONExtractor_EVALUATED    OUTPUT FEATURE_TYPE SubstringExtractor_OUTPUT         @Tcl2("SubstringExtractor_extract 1 -2")
 
 # -------------------------------------------------------------------------
 
-Tcl2 set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim]] }      {         set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim;            set delim [set AttributeSplitter_5c85c2bc_0c7e_4a35_94bf_c57ff3cd0c250_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+Tcl2 set AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitDelim]] }      {         set AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitDelim;            set delim [set AttributeSplitter_a1a75e89_8481_449e_94d8_bf70b3d319781_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeSplitter    INPUT  FEATURE_TYPE SubstringExtractor_OUTPUT    OUTPUT FEATURE_TYPE AttributeSplitter_OUTPUT         @Tcl2(AttributeSplitter_doSplit)
 
 # -------------------------------------------------------------------------

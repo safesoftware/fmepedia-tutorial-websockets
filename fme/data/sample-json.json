@@ -1,3 +1,4 @@
 {
-	"ws_msg" : "(-123,49)"
+  "ws_publisher_content": "(-123,49)",
+  "fns_type": "ws_publisher"
 }
