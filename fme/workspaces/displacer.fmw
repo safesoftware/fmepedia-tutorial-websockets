@@ -5,7 +5,7 @@
 #    Command-line to run this workspace:
 #    
 #    
-#    C:\apps\FME_14181\fme.exe C:\safegit\fmepedia-tutorial-websockets\fme\workspaces\displacer.fmw
+#    C:\apps\FME_14187\fme.exe C:\safegit\fmepedia-tutorial-websockets\fme\workspaces\displacer.fmw
 #          --server_url ws://jabba:7078/websocket
 #    
 #    
@@ -20,8 +20,8 @@
 #! TITLE=""
 #! MAX_LOG_FEATURES="200"
 #! END_TCL=""
-#! FME_BUILD_NUM="14181"
-#! ZOOM_SCALE="120"
+#! FME_BUILD_NUM="14187"
+#! ZOOM_SCALE="100"
 #! CATEGORY=""
 #! REDIRECT_TERMINATORS="NONE"
 #! LEGAL_TERMS_CONDITIONS=""
@@ -29,24 +29,24 @@
 #! USAGE=""
 #! END_PYTHON=""
 #! HISTORY=""
-#! FME_DOCUMENT_PRIORGUID="7bfd6552-4d33-46ae-825c-0d35f951ca3d,0106a703-a099-4001-8b48-cfe664312434,99311605-19d4-47a5-bf6d-608be7b948b3"
-#! DOC_TOP_LEFT="-3369 -41"
+#! FME_DOCUMENT_PRIORGUID="7bfd6552-4d33-46ae-825c-0d35f951ca3d,0106a703-a099-4001-8b48-cfe664312434,99311605-19d4-47a5-bf6d-608be7b948b3,f2c39c80-30af-48e7-a6f2-83572148351c"
+#! DOC_TOP_LEFT="-2383 -41"
 #! REQUIREMENTS_KEYWORD=""
 #! SOURCE_ROUTING_FILE=""
 #! DESTINATION_ROUTING_FILE=""
 #! DESTINATION="NONE"
-#! LAST_SAVE_DATE="2013-10-24T15:51:24"
+#! LAST_SAVE_DATE="2013-12-03T17:13:22"
 #! FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #! WORKSPACE_VERSION="1"
 #! SOURCE="NONE"
-#! LAST_SAVE_BUILD="FME(R) 2014 (20131022 - Build 14181 - WIN32)"
+#! LAST_SAVE_BUILD="FME(R) 2014 (20131030 - Build 14187 - WIN32)"
 #! FME_SERVER_SERVICES=""
 #! LOG_MAX_RECORDED_FEATURES="200"
 #! LOG_FILE=""
 #! REQUIREMENTS=""
 #! BEGIN_TCL=""
-#! DOC_EXTENTS="4506 1760"
-#! FME_DOCUMENT_GUID="f2c39c80-30af-48e7-a6f2-83572148351c"
+#! DOC_EXTENTS="3520 800"
+#! FME_DOCUMENT_GUID="d425ba7d-9457-413c-a832-1e89d104ebeb"
 #! SHOW_ANNOTATIONS="true"
 #! IGNORE_READER_FAILURE="No"
 #! WARN_INVALID_XFORM_PARAM="Yes"
@@ -105,13 +105,13 @@
 #! <COMMENT
 #! IDENTIFIER="26"
 #! COMMENT_VALUE="&lt;html&gt;&lt;body&gt;displacer.fmw&lt;br&gt;Safe Software&lt;br&gt;Last modifiec: 2013-10-18&lt;br&gt;&lt;br&gt;Reads from FME WebSocket Server, extracts coordinates,&lt;br&gt;displaces point, and writes back to WebSocket.&lt;br&gt;&lt;br&gt;This is an example of the Message Streaming mode of&lt;br&gt;WebSocket communication. No setup is required on FME&lt;br&gt;Server.&lt;br&gt;&lt;br&gt;NOTE: this workspace runs continually once started, and &lt;br&gt;must be stopped manually.&lt;/body&gt;&lt;/html&gt;"
-#! POSITION="-3369 1719"
+#! POSITION="-2383 508"
 #! ORDER="33"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
-#! TOP_LEFT="-3370 1719"
-#! BOTTOM_RIGHT="-3370 1719"
-#! COLOUR="1,1,0.784314"
+#! TOP_LEFT="-2383 508"
+#! BOTTOM_RIGHT="-2383 508"
+#! COLOUR="1,1,0.784314,0"
 #! SIZE_POLICY="10"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="0"
@@ -123,9 +123,9 @@
 #! ORDER="31"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="true"
-#! TOP_LEFT="272 723"
-#! BOTTOM_RIGHT="272 723"
-#! COLOUR="0.666667,0.901961,1"
+#! TOP_LEFT="273 723"
+#! BOTTOM_RIGHT="273 723"
+#! COLOUR="0.666667,0.901961,1,0"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="14"
 #! />
@@ -136,9 +136,9 @@
 #! ORDER="32"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="true"
-#! TOP_LEFT="-1346 759"
-#! BOTTOM_RIGHT="-1346 759"
-#! COLOUR="0.666667,0.901961,1"
+#! TOP_LEFT="-1345 759"
+#! BOTTOM_RIGHT="-1345 759"
+#! COLOUR="0.666667,0.901961,1,0"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="1"
 #! />
@@ -154,7 +154,7 @@
 #! BOTTOM_RIGHT="-626 -169"
 #! STICKY="true"
 #! COLOUR="0.164706,0.584314,0.921569"
-#! CONTENTS="9 8 6 29 1 25 "
+#! CONTENTS="9 25 1 6 29 8 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="22"
@@ -164,7 +164,7 @@
 #! BOTTOM_RIGHT="158 -35"
 #! STICKY="true"
 #! COLOUR="0.0156863,0.321569,0.392157"
-#! CONTENTS="17 16 10 13 12 "
+#! CONTENTS="13 10 17 16 12 "
 #! />
 #! <BOOKMARK
 #! IDENTIFIER="23"
@@ -174,7 +174,7 @@
 #! BOTTOM_RIGHT="1137 -204"
 #! STICKY="true"
 #! COLOUR="0.784314,0.258824,0.0627451"
-#! CONTENTS="24 20 14 19 "
+#! CONTENTS="14 19 24 20 "
 #! />
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
@@ -544,7 +544,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME SubstringExtractor    INPUT  FEATURE_TY
 
 # -------------------------------------------------------------------------
 
-Tcl2 set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim]] }      {         set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim;            set delim [set AttributeSplitter_bc08c6e8_dfd4_4f4b_969c_708c5b2d027c0_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
+Tcl2 set AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitDelim [FME_DecodeText {<comma>}];      if { [regexp {^([1-9][0-9]*s)+$} [set AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitDelim]] }      {         set AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitWidths [split [regsub -all {s$} {<comma>} {}] s];         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitWidths;            set source [FME_GetAttribute {"_substring"}];            set attrNum 0;            set listName {latlon};            set attrPos 0;            foreach width [set AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitWidths]            {               set endPos [expr $attrPos + $width - 1];               set bit [string range $source $attrPos $endPos];               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrPos $width;               incr attrNum;            };         };      }      else      {         proc AttributeSplitter_doSplit {}         {            global AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitDelim;            set delim [set AttributeSplitter_a9fb1ced_8bd8_4b22_ac95_4fbfaa4e23ba0_splitDelim];            set delimLength [string length $delim];            set source [FME_GetAttribute {"_substring"}];            set keepEmptyParts [string equal {No} {No}];            set bits {};            set startIndex 0;            set nextIndex [string first $delim $source $startIndex];            while {$nextIndex >= 0} {              set part [string range $source $startIndex [expr $nextIndex-1]];              if { $keepEmptyParts || $part != \"\" } {                 lappend bits $part;              };              set startIndex [expr $nextIndex + $delimLength];              set nextIndex [string first $delim $source $startIndex];            };            set lastPart [string range $source $startIndex end];            if { $keepEmptyParts || $lastPart != \"\" } { lappend bits $lastPart };            set listName {latlon};            set attrNum 0;            foreach bit $bits            {               FME_SetAttribute "$listName{$attrNum}" [string trim $bit];               incr attrNum;            }          }       }
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeSplitter    INPUT  FEATURE_TYPE SubstringExtractor_OUTPUT    OUTPUT FEATURE_TYPE AttributeSplitter_OUTPUT         @Tcl2(AttributeSplitter_doSplit)
 
 # -------------------------------------------------------------------------
