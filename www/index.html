@@ -21,12 +21,15 @@
 	<link href="https://google-developers.appspot.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
+	<!-- FME Server Javascript API -->
+    <script type="text/javascript" src="http://api.fmeserver.com/js/v1/FMEServer.min.js"></script>
+
 	<!-- Stylesheet for demo/tutorial -->
 	<link rel="stylesheet" href="css/index.css">
 
 </head>
 
-<body onload="initialize()">
+<body>
 
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
@@ -70,30 +73,19 @@
 	</div>
 	
 	<script type="text/javascript">
-	var location;
-	var mapZoom;
-	
+	var location, map, fmes;
+	var sendconn, rcvconn;
 
-	function initialize() {
+	window.onload = function initialize() {
+
+		fmes = new FMEServer({
+			server : "http://fmepedia2014-safe-software.fmecloud.com",
+			token : "fb1c3ee6828e6814c75512dd4770a02e73d913b8"
+		});
+
 		/*** FME Server WebSocket initialization ***/
-		var sendconn = new WebSocket('ws://fmeserver:7078/websocket');
-		var rcvconn = new WebSocket('ws://fmeserver:7078/websocket');
-		
-		var connmsg = null;
-		
-		/*** connect to server input stream ***/
-		sendconn.onopen = function() {
-			connmsg = '{ ws_op : "open", ws_stream_id : "points" }';
-			sendconn.send(connmsg);
-			log_message(connmsg, 'sent_log');
-		}
-		
-		/*** connect to server output stream ***/
-		rcvconn.onopen = function() {
-			connmsg = '{ ws_op : "open", ws_stream_id : "disp_pnts" }';
-			rcvconn.send(connmsg);
-			log_message(connmsg, 'sent_log');
-		}
+		sendconn = fmes.getWebSocketConnection('points');
+		rcvconn = fmes.getWebSocketConnection('disp_pnts');
 	
 		/*** Google Maps initialization ***/
 		var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
@@ -101,13 +93,14 @@
 			zoom: 11,
 			center: myLatLng
 		}
-		var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
 		/*** Sending lat/longs from click events to FME Server ***/
 		google.maps.event.addListener(map, 'click', function(event) {
-			var point_msg = '{ ws_op : "send", ws_msg : "' + event.latLng + '" }'
-			log_message(point_msg, 'sent_log');
+			var point_msg = '{ "ws_op" : "send", "ws_msg" : "' + event.latLng + '" }';
 			sendconn.send(point_msg);
+			log_message(point_msg, 'sent_log');
 			
 			// place a marker to show where user clicked
 			var marker = new google.maps.Marker({
