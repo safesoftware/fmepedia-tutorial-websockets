@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
 	<!-- FME Server Javascript API -->
-    <script type="text/javascript" src="http://api.fmeserver.com/js/v1/FMEServer.min.js"></script>
+    <script type="text/javascript" src="http://api.fmeserver.com/js/v1.1/FMEServer.js"></script>
 
 	<!-- Stylesheet for demo/tutorial -->
 	<link rel="stylesheet" href="css/index.css">
@@ -73,19 +73,19 @@
 	</div>
 	
 	<script type="text/javascript">
-	var location, map, fmes;
+	var location, map;
 	var sendconn, rcvconn;
 
 	window.onload = function initialize() {
 
-		fmes = new FMEServer({
+		FMEServer.init({
 			server : "https://fmepedia2014-safe-software.fmecloud.com",
 			token : "fb1c3ee6828e6814c75512dd4770a02e73d913b8"
 		});
 
 		/*** FME Server WebSocket initialization ***/
-		sendconn = fmes.getWebSocketConnection('points');
-		rcvconn = fmes.getWebSocketConnection('disp_pnts');
+		sendconn = FMEServer.getWebSocketConnection('points');
+		rcvconn = FMEServer.getWebSocketConnection('disp_pnts');
 	
 		/*** Google Maps initialization ***/
 		var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
