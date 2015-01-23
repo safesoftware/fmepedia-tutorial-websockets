@@ -77,15 +77,27 @@
 	var sendconn, rcvconn;
 
 	window.onload = function initialize() {
-
-		FMEServer.init({
-			server : "https://fmepedia2014-safe-software.fmecloud.com",
-			token : "fb1c3ee6828e6814c75512dd4770a02e73d913b8"
-		});
+    $.getJSON("http://demos.fmeserver.com.s3.amazonaws.com/server-demo-config.json", function(config) {
+      FMEServer.init(config.initObject);
+      sendconn = FMEServer.getWebSocketConnection('points');
+      rcvconn = FMEServer.getWebSocketConnection('disp_pnts');
+      
+      rcvconn.onmessage = function(event) {
+			log_message(event.data, 'rcvd_log');
+			var coord = JSON.parse(event.data);
+			
+			var myLatlng = new google.maps.LatLng(coord['lat'], coord['lon']);
+			var marker = new google.maps.Marker({
+				position: myLatlng,
+				map: map,
+				title:"Displaced point",
+				animation: google.maps.Animation.DROP
+			});
+		}
+      
+    });
 
 		/*** FME Server WebSocket initialization ***/
-		sendconn = FMEServer.getWebSocketConnection('points');
-		rcvconn = FMEServer.getWebSocketConnection('disp_pnts');
 	
 		/*** Google Maps initialization ***/
 		var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
@@ -117,18 +129,7 @@
 		});
 		
 		/*** Reacting to incoming messages on WebSocket ***/
-		rcvconn.onmessage = function(event) {
-			log_message(event.data, 'rcvd_log');
-			var coord = JSON.parse(event.data);
-			
-			var myLatlng = new google.maps.LatLng(coord['lat'], coord['lon']);
-			var marker = new google.maps.Marker({
-				position: myLatlng,
-				map: map,
-				title:"Displaced point",
-				animation: google.maps.Animation.DROP
-			});
-		}
+
 	}
 	
 	/*** Function to log sent and received WebSocket messages ***/
@@ -138,6 +139,14 @@
 	}
 	
 	/*** Clear logs, triggered by button click ***/
+	function clearlog(div_id) {
+		var div = document.getElementById(div_id);
+		div.innerHTML = '';
+	}
+	</script>
+</body>
+
+</html>
 	function clearlog(div_id) {
 		var div = document.getElementById(div_id);
 		div.innerHTML = '';
