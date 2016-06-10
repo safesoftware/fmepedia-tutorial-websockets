@@ -16,7 +16,7 @@
 	<link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-  
+
 	<!-- Google Maps -->
 	<link href="https://google-developers.appspot.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
@@ -33,7 +33,7 @@
 
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<div class="container">        
+			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -41,10 +41,10 @@
 				</a>
 
 			<div class="brand">FME Server<span class="hidden-tiny"> WebSocket Tutorial</span></div>
-				 
+
 			<div class="nav-collapse collapse">
 				<a href="https://github.com/safesoftware/fmepedia-tutorial-websockets" class="btn">
-					<img src="libs/github.png"> Fork GitHub
+					<img src="libs/GitHub.png"> Fork GitHub
 				</a>
 				<a href="https://github.com/safesoftware/fmepedia-tutorial-websockets/archive/master.zip" class="btn">
 					<i class="icon-download-alt"></i> Download Zip
@@ -71,7 +71,7 @@
        </div>
       </div>
 	</div>
-	
+
 	<script type="text/javascript">
 	var location, map;
 	var sendconn, rcvconn;
@@ -81,11 +81,11 @@
       FMEServer.init(config.initObject);
       sendconn = FMEServer.getWebSocketConnection('points');
       rcvconn = FMEServer.getWebSocketConnection('disp_pnts');
-      
+
       rcvconn.onmessage = function(event) {
 			log_message(event.data, 'rcvd_log');
 			var coord = JSON.parse(event.data);
-			
+
 			var myLatlng = new google.maps.LatLng(coord['lat'], coord['lon']);
 			var marker = new google.maps.Marker({
 				position: myLatlng,
@@ -94,11 +94,11 @@
 				animation: google.maps.Animation.DROP
 			});
 		}
-      
+
     });
 
 		/*** FME Server WebSocket initialization ***/
-	
+
 		/*** Google Maps initialization ***/
 		var myLatLng = new google.maps.LatLng(49.138077,-122.857472);
 		var myOptions = {
@@ -107,13 +107,13 @@
 		}
 
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-		
+
 		/*** Sending lat/longs from click events to FME Server ***/
 		google.maps.event.addListener(map, 'click', function(event) {
 			var point_msg = '{ "ws_op" : "send", "ws_msg" : "' + event.latLng + '" }';
 			sendconn.send(point_msg);
 			log_message(point_msg, 'sent_log');
-			
+
 			// place a marker to show where user clicked
 			var marker = new google.maps.Marker({
 				position: event.latLng,
@@ -127,26 +127,18 @@
 				title:"Original point"
 			});
 		});
-		
+
 		/*** Reacting to incoming messages on WebSocket ***/
 
 	}
-	
+
 	/*** Function to log sent and received WebSocket messages ***/
 	function log_message(message, div_id) {
 		var div = document.getElementById(div_id);
 		div.innerHTML = '<p>'+new Date().toLocaleTimeString()+'<br>'+message+'</p>' + div.innerHTML;
 	}
-	
-	/*** Clear logs, triggered by button click ***/
-	function clearlog(div_id) {
-		var div = document.getElementById(div_id);
-		div.innerHTML = '';
-	}
-	</script>
-</body>
 
-</html>
+	/*** Clear logs, triggered by button click ***/
 	function clearlog(div_id) {
 		var div = document.getElementById(div_id);
 		div.innerHTML = '';
